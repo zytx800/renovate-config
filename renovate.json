@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Asia/Yangon",
+  "schedule": [
+    "every weekday",
+    "every weekend"
+  ],
+  "packageFiles": ["package.json"],
+  "automerge": true,
+  "rangeStrategy": "bump"
+}
