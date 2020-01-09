@@ -1,27 +1,49 @@
 {
-  "extends": [
-        ":separateMajorReleases",
-        ":combinePatchMinorReleases",
-        ":ignoreUnstable",
-        ":prImmediately",
-        ":semanticPrefixFixDepsChoreOthers",
-        ":updateNotScheduled",
-        ":automergeDisabled",
-        ":ignoreModulesAndTests",
-        ":maintainLockFilesDisabled",
-        ":autodetectPinVersions",
-        ":prHourlyLimit2",
-        ":prConcurrentLimit20",
-        "group:monorepos",
-        "group:recommended",
-        "helpers:disableTypesNodeMajor"
+  "enabled": true,
+  "major": {
+    "enabled": true
+  },
+  "separateMajorMinor": true,
+  "separateMinorPatch": false,
+  "ignoreUnstable": true,
+  "prCreation": "immediate",
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "*"
+      ],
+      "semanticCommitType": "chore"
+    },
+    {
+      "depTypeList": [
+        "dependencies"
+      ],
+      "semanticCommitType": "fix"
+    }
   ],
+  "updateNotScheduled": true,
+  "automerge": true,
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/examples/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**"
+  ],
+  "lockFileMaintenance": {
+    "enabled": false
+  },
+  "rangeStrategy": "bump",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 20,
   "timezone": "Asia/Yangon",
   "schedule": [
     "every weekday",
     "every weekend"
   ],
-  "packageFiles": ["package.json"],
-  "automerge": true,
-  "rangeStrategy": "bump"
+  "packageFiles": [
+    "package.json"
+  ]
 }
