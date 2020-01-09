@@ -19,6 +19,14 @@
         "dependencies"
       ],
       "semanticCommitType": "fix"
+    },
+    {
+      "packageNames": [
+        "@types/node"
+      ],
+      "major": {
+        "enabled": false
+      }
     }
   ],
   "updateNotScheduled": true,
